@@ -4,8 +4,26 @@
 import { DATA_CERTIFICAZIONI, CONFIG_CERTIFICAZIONI, DATA_VALORE_ECONOMICO, DATA_EMISSIONI, DATA_SICUREZZA } from './data.js';
 import { StackedBarChart } from './components/StackedBar.js';
 import { DonutChart } from './components/DonutChart.js';
-import { GroupedBarChart } from './components/GroupedBarChart.js'; // <--- NUOVO IMPORT
-import { LineChart } from './components/LineChart.js'; // <--- NUOVO
+import { GroupedBarChart } from './components/GroupedBarChart.js';
+import { LineChart } from './components/LineChart.js';
+
+// --- FUNZIONE DI UTILITÀ: Attiva il grafico solo quando è visibile ---
+const observeAndDraw = (chartInstance) => {
+    // Configuriamo l'osservatore
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            // Se l'elemento è visibile almeno al 20% (threshold: 0.2)
+            if (entry.isIntersecting) {
+                chartInstance.draw(); // Lancia l'animazione GSAP
+                obs.unobserve(entry.target); // Smetti di osservare (lo facciamo una volta sola)
+            }
+        });
+    }, { threshold: 0.2 }); // 0.2 significa "quando il 20% del grafico è visibile"
+
+    // Iniziamo a osservare il contenitore del grafico
+    observer.observe(chartInstance.container);
+};
+
 
 // --- A. Inizializzazione Grafico Certificazioni (Barre) ---
 const certChart = new StackedBarChart(
@@ -13,9 +31,9 @@ const certChart = new StackedBarChart(
     DATA_CERTIFICAZIONI, 
     CONFIG_CERTIFICAZIONI
 );
+// Invece di certChart.draw(), usiamo la nostra funzione:
+observeAndDraw(certChart);
 
-// Disegna il grafico iniziale
-certChart.draw();
 
 // --- B. Generazione Controlli (Bottoni Legenda) ---
 const controlsContainer = document.getElementById('controls-cert');
@@ -52,7 +70,6 @@ CONFIG_CERTIFICAZIONI.forEach(type => {
     // Stato Attivo/Disattivo
     let isActive = true;
     
-    // Funzione per cambiare lo stile visivo
     const setActiveStyle = (active) => {
         if (active) {
             btn.style.opacity = '1';
@@ -70,30 +87,32 @@ CONFIG_CERTIFICAZIONI.forEach(type => {
     btn.onclick = () => {
         isActive = !isActive;
         setActiveStyle(isActive);
-        certChart.toggleType(type.id);
+        certChart.toggleType(type.id); // Questo ridisegna immediatamente se cliccato
     };
 
     controlsContainer.appendChild(btn);
-}); // <--- CHIUSURA DEL CICLO FOREACH QUI!
+}); 
+
 
 // --- C. Inizializzazione Grafico Economico (Ciambella) ---
-// Questo codice deve stare FUORI dal ciclo sopra, altrimenti verrebbe eseguito 8 volte!
 const economicChart = new DonutChart(
     'chart-economico', 
     DATA_VALORE_ECONOMICO
 );
-economicChart.draw();
+observeAndDraw(economicChart); // <--- Scroll trigger
+
 
 // --- D. Inizializzazione Grafico Ambiente (Barre Raggruppate) ---
 const envChart = new GroupedBarChart(
     'chart-ambiente',
     DATA_EMISSIONI
 );
-envChart.draw();
+observeAndDraw(envChart); // <--- Scroll trigger
+
 
 // --- E. Inizializzazione Grafico Sicurezza (Linee) ---
 const safetyChart = new LineChart(
     'chart-sicurezza',
     DATA_SICUREZZA
 );
-safetyChart.draw();
+observeAndDraw(safetyChart); // <--- Scroll trigger
