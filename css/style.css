@@ -203,12 +203,14 @@ footer {
     opacity: 0.8;
 }
 
+/* css/style.css */
+
 .footer-logo {
-    height: 50px; /* Altezza controllata per non rompere il layout */
-    width: auto;
-    background-color: white; /* Crea un box pulito per il logo JPG */
-    padding: 5px 10px;
-    border-radius: 4px;
+    height: 80px;       /* <-- MODIFICA QUI (Era 50px) */
+    width: auto;        /* Mantiene le proporzioni */
+    background-color: white;
+    padding: 10px 20px; /* <-- Aumentato leggermente per dare respiro */
+    border-radius: 6px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
