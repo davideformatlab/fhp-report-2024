@@ -12,13 +12,13 @@ export const COLORS = {
 };
 
 // Dati Certificazioni (Pagina 63 e Immagine fornita)
-// AGGIORNATO: Aggiunto "Fitok" alle aziende corrette
+// AGGIORNATO: Rimossi "Fitok" e "CCPB" da Multiservice
 export const DATA_CERTIFICAZIONI = [
     { company: "FHP Porto di Carrara", certs: ["ISO 9001", "ISO 45001", "Fitok", "ISO 14001"] },
     { company: "FHP Lifting", certs: ["ISO 9001", "ISO 45001", "ISO 14001"] },
     { company: "FHP MarterNeri", certs: ["ISO 9001", "ISO 45001", "Fitok", "AEO", "GMP+"] },
     { company: "FHP CPM", certs: ["ISO 9001", "ISO 45001", "ISO 14001"] },
-    { company: "FHP Multiservice", certs: ["ISO 9001", "ISO 45001", "Fitok", "AEO", "CCPB", "GMP+"] },
+    { company: "FHP Multiservice", certs: ["ISO 9001", "ISO 45001", "AEO", "GMP+"] }, // CORRETTO: No Fitok, No CCPB
     { company: "FHP SO.RI.MA.", certs: ["ISO 9001", "ISO 45001", "Fitok", "ISO 14001", "GMP+"] },
     { company: "FHP Transped", certs: ["ISO 9001", "ISO 45001", "ISO 14001"] }
 ];
