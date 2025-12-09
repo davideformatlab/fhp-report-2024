@@ -11,14 +11,15 @@ export const COLORS = {
     text: '#1a1a1a'
 };
 
-// Dati Certificazioni (Pagina 63 e Immagine fornita) [cite: 1061]
+// Dati Certificazioni (Pagina 63 e Immagine fornita)
+// AGGIORNATO: Aggiunto "Fitok" alle aziende corrette
 export const DATA_CERTIFICAZIONI = [
-    { company: "FHP Porto di Carrara", certs: ["ISO 9001", "ISO 45001", "ISO 14001", "ISO 22001"] },
+    { company: "FHP Porto di Carrara", certs: ["ISO 9001", "ISO 45001", "Fitok", "ISO 14001"] },
     { company: "FHP Lifting", certs: ["ISO 9001", "ISO 45001", "ISO 14001"] },
-    { company: "FHP MarterNeri", certs: ["ISO 9001", "ISO 45001", "ISO 14001", "AEO", "GMP+"] },
+    { company: "FHP MarterNeri", certs: ["ISO 9001", "ISO 45001", "Fitok", "AEO", "GMP+"] },
     { company: "FHP CPM", certs: ["ISO 9001", "ISO 45001", "ISO 14001"] },
-    { company: "FHP Multiservice", certs: ["ISO 9001", "ISO 45001", "ISO 14001", "AEO", "CCPB", "GMP+"] },
-    { company: "FHP SO.RI.MA.", certs: ["ISO 9001", "ISO 45001", "ISO 14001", "ISO 22001", "GMP+"] },
+    { company: "FHP Multiservice", certs: ["ISO 9001", "ISO 45001", "Fitok", "AEO", "CCPB", "GMP+"] },
+    { company: "FHP SO.RI.MA.", certs: ["ISO 9001", "ISO 45001", "Fitok", "ISO 14001", "GMP+"] },
     { company: "FHP Transped", certs: ["ISO 9001", "ISO 45001", "ISO 14001"] }
 ];
 
@@ -26,15 +27,15 @@ export const DATA_CERTIFICAZIONI = [
 export const CONFIG_CERTIFICAZIONI = [
     { id: 'ISO 9001', color: COLORS.navy },
     { id: 'ISO 45001', color: COLORS.lightBlue },
+    { id: 'Fitok', color: '#6c7d9c' }, // Blu Ardesia
     { id: 'ISO 14001', color: '#aebccc' },
     { id: 'AEO', color: COLORS.periwinkle },
-    { id: 'Fitok', color: '#6c7d9c' },
     { id: 'CCPB', color: '#dbe5f1' }, // Certificazione Biologica
     { id: 'ISO 22001', color: '#cccccc' },
     { id: 'GMP+', color: '#e5e5e5' }
 ];
 
-// Dati Valore Economico (Pagina 13) [cite: 362]
+// Dati Valore Economico (Pagina 13)
 export const DATA_VALORE_ECONOMICO = [
     { label: "Fornitori", value: 55, amount: "91.4M", color: COLORS.navy },
     { label: "Dipendenti", value: 23, amount: "37.7M", color: COLORS.lightBlue },
@@ -42,13 +43,6 @@ export const DATA_VALORE_ECONOMICO = [
     { label: "Finanziatori", value: 2, amount: "3.1M", color: COLORS.periwinkle },
     { label: "Trattenuto", value: 17, amount: "29.3M", color: '#e5e5e5' }
 ];
-
-// Dati Personale per Genere (Pagina 26) [cite: 786]
-export const DATA_PERSONALE = {
-    uomini: 535, // 494 Indeter. + 41 Deter.
-    donne: 65    // 60 Indeter. + 5 Deter.
-
-};
 
 // Dati Emissioni CO2 (Tabella 8 PDF)
 export const DATA_EMISSIONI = [
