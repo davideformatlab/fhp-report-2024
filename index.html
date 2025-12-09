@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FHP Report Sostenibilità 2024</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="hero-subtitle">Gruppo FHP Holding Portuale</span>
+            <h1>Rapporto di Sostenibilità 2024</h1>
+            <p>Un percorso verso l'innovazione, la sicurezza e il rispetto per l'ambiente.</p>
+            <div class="scroll-indicator">↓</div>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="topic-section">
+            <div class="content-block">
+                <div class="text-col">
+                    <span class="section-tag">Governance</span>
+                    <h2>Certificazioni e Qualità</h2>
+                    <p>
+                        Il Gruppo FHP pone la qualità e la conformità normativa al centro della propria strategia. 
+                        Nel 2024 abbiamo consolidato il nostro portafoglio di certificazioni, garantendo standard operativi 
+                        d'eccellenza in tutti i terminal.
+                    </p>
+                    <p>
+                        Ogni certificazione rappresenta il nostro impegno tangibile verso procedure trasparenti, 
+                        sicure e monitorate.
+                    </p>
+                </div>
+                <div class="image-col">
+                    <img src="https://www.davidefrigoli.it/wp-content/uploads/2025/12/2e5cb06535a1a0a81e77488c2e4c7c566172db1d-scaled-1.jpg" alt="Operazioni Portuali FHP">
+                </div>
+            </div>
+
+            <div class="chart-wrapper">
+                <div id="controls-cert" class="controls-bar"></div>
+                <div class="chart-card" id="chart-certificazioni"></div>
+            </div>
+        </section>
+
+        <section class="topic-section alt-layout">
+            <div class="content-block">
+                <div class="text-col">
+                    <span class="section-tag">Valore Condiviso</span>
+                    <h2>Impatto Economico Generato</h2>
+                    <p>
+                        La sostenibilità economica è il motore che ci permette di investire nel futuro. 
+                        Nel 2024, il Gruppo ha generato un valore significativo, distribuendo la maggior parte 
+                        delle risorse ai fornitori locali e ai dipendenti.
+                    </p>
+                    <p>
+                        Questo approccio circolare rafforza il tessuto economico dei territori in cui operiamo.
+                    </p>
+                </div>
+                <div class="image-col">
+                    <img src="https://www.davidefrigoli.it/wp-content/uploads/2025/12/Monfalcone-aerea-1-scaled-1.jpg" alt="Panoramica Terminal Monfalcone">
+                </div>
+            </div>
+
+            <div class="chart-wrapper">
+                <div class="chart-card" id="chart-economico"></div>
+            </div>
+        </section>
+
+        <section class="topic-section">
+            <div class="content-block">
+                <div class="text-col">
+                    <span class="section-tag">Environment</span>
+                    <h2>Emissioni GHG (tCO₂eq)</h2>
+                    <p>
+                        La riduzione della nostra impronta carbonica è una priorità assoluta. 
+                        Attraverso l'efficientamento dei processi e l'ammodernamento dei mezzi, 
+                        abbiamo invertito il trend delle emissioni.
+                    </p>
+                    <p>
+                        Il grafico mostra il confronto triennale tra emissioni dirette (Scope 1) e indirette (Scope 2).
+                    </p>
+                </div>
+                <div class="image-col">
+                    <img src="https://www.davidefrigoli.it/wp-content/uploads/2025/12/BuTAerea1.jpg" alt="Visione aerea terminal">
+                </div>
+            </div>
+
+            <div class="chart-wrapper">
+                <div class="legend-inline">
+                    <div class="legend-item"><span class="dot" style="background:#002554"></span> Scope 1</div>
+                    <div class="legend-item"><span class="dot" style="background:#405080"></span> Scope 2</div>
+                </div>
+                <div class="chart-card" id="chart-ambiente"></div>
+            </div>
+        </section>
+
+        <section class="topic-section alt-layout">
+            <div class="content-block">
+                <div class="text-col">
+                    <span class="section-tag">Sociale</span>
+                    <h2>Sicurezza sul Lavoro</h2>
+                    <p>
+                        Le persone sono il nostro asset più prezioso. L'investimento in formazione 
+                        e cultura della sicurezza ha portato a risultati concreti.
+                    </p>
+                    <p>
+                        Il trend degli infortuni mostra un calo costante, testimonianza del nostro 
+                        impegno verso l'obiettivo "Zero Incidenti".
+                    </p>
+                </div>
+                <div class="image-col">
+                    <img src="https://www.davidefrigoli.it/wp-content/uploads/2025/12/MTO-HERO-scaled-1.jpg" alt="Nave cargo al porto">
+                </div>
+            </div>
+
+            <div class="chart-wrapper">
+                <div class="chart-card" id="chart-sicurezza"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2024 FHP Holding Portuale - Digital Sustainability Report</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

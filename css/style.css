@@ -1,0 +1,215 @@
+:root {
+    --primary: #002554;      /* Navy FHP */
+    --secondary: #405080;    /* Muted Blue */
+    --accent: #00d2ff;       /* Cyan Bright */
+    --bg-body: #fdfdfd;      /* Quasi bianco, più caldo del grigio */
+    --text-dark: #1a1a1a;
+    --text-light: #555555;
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Roboto', sans-serif;
+    
+    --card-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    --border-radius: 12px;
+}
+
+/* --- RESET & BASE --- */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    background-color: var(--bg-body);
+    color: var(--text-dark);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--font-heading); margin: 0; }
+
+img { max-width: 100%; display: block; border-radius: var(--border-radius); }
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 85vh; /* Molto impattante */
+    background-image: linear-gradient(rgba(0,37,84,0.6), rgba(0,37,84,0.8)), 
+                      url('https://www.davidefrigoli.it/wp-content/uploads/2025/12/MTO-HERO-scaled-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Effetto Parallax */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.hero-content { max-width: 800px; animation: fadeIn 1.5s ease-out; }
+
+.hero-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    opacity: 0.7;
+    animation: bounce 2s infinite;
+}
+
+/* --- MAIN LAYOUT --- */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Sezione Argomento */
+.topic-section {
+    margin-bottom: 120px; /* Tanto spazio bianco = Eleganza */
+}
+
+/* Griglia Contenuto (Testo + Foto) */
+.content-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.text-col { padding: 10px; }
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--secondary);
+    border-bottom: 1px solid var(--accent);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.text-col h2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+}
+
+.text-col p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.image-col img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.5s ease;
+}
+
+.image-col img:hover { transform: scale(1.02); }
+
+/* --- CHART WRAPPER & CARDS --- */
+.chart-wrapper {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0,0,0,0.03);
+    position: relative;
+}
+
+.chart-card {
+    width: 100%;
+    height: 450px; /* Grafici grandi e leggibili */
+    position: relative;
+}
+
+/* --- COMPONENTS --- */
+/* Bottoni Filtro */
+.controls-bar {
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+#controls-cert button {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 8px 16px;
+}
+
+/* Legenda Inline */
+.legend-inline {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-light); }
+.dot { width: 12px; height: 12px; border-radius: 50%; display: block; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--primary);
+    color: white;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 100px;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);} 40% {transform: translateY(-10px) translateX(-50%);} 60% {transform: translateY(-5px) translateX(-50%);} }
+
+/* --- MEDIA QUERIES (DESKTOP) --- */
+@media (min-width: 900px) {
+    .content-block {
+        grid-template-columns: 1fr 1fr; /* 2 Colonne su Desktop */
+        gap: 80px;
+    }
+
+    /* Layout Alternato (Zig-Zag) */
+    .alt-layout .content-block {
+        direction: rtl; /* Hack veloce per scambiare colonne visivamente */
+    }
+    .alt-layout .content-block > * {
+        direction: ltr; /* Ripristina direzione testo */
+    }
+
+    .hero h1 { font-size: 4.5rem; }
+}
