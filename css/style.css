@@ -181,15 +181,48 @@ main {
 .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-light); }
 .dot { width: 12px; height: 12px; border-radius: 50%; display: block; }
 
-/* Footer */
+/* --- FOOTER --- */
 footer {
-    text-align: center;
-    padding: 60px 20px;
     background: var(--primary);
     color: white;
-    font-size: 0.9rem;
-    opacity: 0.9;
+    padding: 40px 20px;
     margin-top: 100px;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    max-width: 1100px; /* Allineato con il resto del contenuto */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Spinge gli elementi agli estremi opposti */
+    align-items: center; /* Allinea verticalmente al centro */
+}
+
+.footer-text p {
+    margin: 0;
+    opacity: 0.8;
+}
+
+.footer-logo {
+    height: 50px; /* Altezza controllata per non rompere il layout */
+    width: auto;
+    background-color: white; /* Crea un box pulito per il logo JPG */
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* Adattamento Mobile per il Footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column-reverse; /* Logo sopra, testo sotto (o viceversa togliendo reverse) */
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        height: 40px; /* Leggermente più piccolo su mobile */
+    }
 }
 
 /* --- ANIMATIONS --- */
