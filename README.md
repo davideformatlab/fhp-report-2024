@@ -16,8 +16,6 @@ Per modificare numeri, aggiungere anni o aggiornare le certificazioni:
 
 1.  Apri il file `js/data.js` nella repository.
 2.  Modifica i valori all'interno degli oggetti (es. aggiungere "CCPB" o cambiare i valori di CO2).
-3.  Fai il **Commit** delle modifiche.
-4.  Attendi circa 1-2 minuti: GitHub Pages aggiornerà automaticamente il sito al link sopra.
 
 ### Esempio: Aggiornamento Certificazioni
 Nel file `js/data.js`, modifica l'array `certs` dell'azienda interessata:
